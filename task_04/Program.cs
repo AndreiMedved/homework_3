@@ -1,29 +1,46 @@
 ﻿// Task_04 Показать кубы чисел, заканчивающихся на четную цифру
-int a = new Random().Next(1, 10);
-int b = new Random().Next(1, 10);
-int c = new Random().Next(1, 10);
-int d = new Random().Next(1, 10);
-int e = new Random().Next(1, 10);
-int f = new Random().Next(1, 10);
-int g = new Random().Next(1, 10);
-int i = 0;
-int prod = 1;
-int[] numbers = {a, b, c, d, e, f, g};
-
-while (i < numbers.Length)
+void FillArray(int[] collection)
 {
-    Console.Write(numbers[i] + " ");
-    i++;
-}
-
-i = 0;
-Console.WriteLine("");
-
-while (i < numbers.Length)
-{
-    if(numbers[i]%2 == 0)
+    int length = collection.Length;
+    int index = 0;
+    while(index < length)
     {
-        Console.WriteLine(Math.Pow(numbers[i], 3));
+        collection[index] = new Random().Next(1, 10);
+        index++;
     }
-    i++;
 }
+
+void PrintArray(int[] collection)
+{
+    int count = collection.Length;
+    int index = 0;
+    while(index < count)
+    {
+        Console.Write(collection[index] + " ");
+        index++;
+    }
+    Console.WriteLine();
+}
+
+int ReturnCube(int number)
+{
+    int coube = number*number*number;
+    return coube;
+}
+
+int [] example = new int[10];
+int index = 0;
+
+FillArray(example);
+PrintArray(example);
+
+while(index < example.Length)
+{
+    if(example[index]%2 == 0)
+    {
+        Console.Write(ReturnCube(example[index]) + " ");
+    }
+    index++;
+
+}
+
