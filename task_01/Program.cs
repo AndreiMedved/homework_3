@@ -1,5 +1,7 @@
 ﻿// Task_01 Найти кубы чисел от 1 до N
 
+
+
 int a = new Random().Next(-10, 10);
 int b = new Random().Next(-10, 10);
 int c = new Random().Next(-10, 10);
