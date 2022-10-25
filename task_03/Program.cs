@@ -1,25 +1,43 @@
 ﻿// Task_4 Написать программу вычисления произведения чисел от 1 до N
-int a = new Random().Next(1, 10);
-int b = new Random().Next(1, 10);
-int c = new Random().Next(1, 10);
-int d = new Random().Next(1, 10);
-int e = new Random().Next(1, 10);
-int f = new Random().Next(1, 10);
-int g = new Random().Next(1, 10);
-int i = 0;
-int prod = 1;
-int[] numbers = {a, b, c, d, e, f, g};
 
-while (i < numbers.Length)
+void FillArray(int[] collection)
 {
-    Console.Write(numbers[i] + " ");
-    i++;
+    int length = collection.Length;
+    int index = 0;
+    while(index < length)
+    {
+        collection[index] = new Random().Next(1, 10);
+        index++;
+    }
 }
-i = 0;
-Console.WriteLine("");
-while (i < numbers.Length)
+
+void PrintArray(int[] collection)
 {
-    prod = prod * numbers[i];
-    i++;
+    int count = collection.Length;
+    int index = 0;
+    while(index < count)
+    {
+        Console.Write(collection[index] + " ");
+        index++;
+    }
+    Console.WriteLine();
 }
-Console.WriteLine(prod);
+
+int ProdReturn(int[] numbers)
+{
+    int index = 0;
+    int length = numbers.Length;
+    int prod = 1;
+    while(index < length)
+    {
+        prod = prod * numbers[index];
+        index++;
+    }
+    return prod;
+}
+
+int[] numbers = new int[4];
+FillArray(numbers);
+PrintArray(numbers);
+Console.WriteLine(ProdReturn(numbers));
+
