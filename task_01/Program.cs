@@ -1,28 +1,36 @@
 ﻿// Task_01 Найти кубы чисел от 1 до N
 
-
-
-int a = new Random().Next(-10, 10);
-int b = new Random().Next(-10, 10);
-int c = new Random().Next(-10, 10);
-int d = new Random().Next(-10, 10);
-int e = new Random().Next(-10, 10);
-int f = new Random().Next(-10, 10);
-int g = new Random().Next(-10, 10);
-int i = 0;
-int[] numbers = {a, b, c, d, e, f, g};
-
-while (i < numbers.Length)
+void FillArray(int[] collection)
 {
-    Console.Write(numbers[i] + " ");
-    i++;
+    int length = collection.Length;
+    int index = 0;
+    while(index < length)
+    {
+        collection[index] = new Random().Next(1, 10);
+        index++;
+    }
 }
 
-i = 0;
-Console.WriteLine("");
+void PrintArray(int[] collection)
+{
+    int count = collection.Length;
+    int index = 0;
+    while(index < count)
+    {
+        Console.Write(collection[index] + " ");
+        index++;
+    }
+    Console.WriteLine();
+}
+
+int[] numbers = new int[new Random().Next(1, 10)];
+int i = 0;
+
+FillArray(numbers);
+PrintArray(numbers);
 
 while (i < numbers.Length)
 {
-    Console.WriteLine(Math.Pow(numbers[i], 3));
+    Console.Write((Math.Pow(numbers[i], 3)) + " ");
     i++;
 }
